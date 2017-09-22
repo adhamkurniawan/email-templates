@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Zammad Email Notification</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/master.css">
+  </head>
+  <body>
+
+    <div class="zammad-email-container">
+      <div class="zammad-email-notification">
+        <div class="zammad-email-notification-header">
+          <div class="row">
+            <div class="col-md-2 col-sm-2 col-xs-3">
+              <img src="images/profile.jpg" class="zammad-email-notification-image img-circle">
+            </div>
+            <div class="col-md-10 col-sm-10 col-xs-9">
+              <h1 class="zen-title">New Ticket: Ticket Name</h1>
+              <p class="zen-content">Recipient: Recipient Name</p>
+            </div>
+          </div>
+        </div>
+        <div class="zammad-email-notification-body">
+          Hi First Name <br><br>
+          A new ticket (#{ticket.title}) has been created by "<strong>#{current_user.longname}</strong>". <br><br>
+          Group: Group Name <br>
+          Owner: Owner Name <br>
+          State: State Name <br><br>
+
+          Cold-pressed taxidermy synth shaman. Freegan enamel pin adaptogen yr post-ironic try-hard green juice gentrify pabst man braid deep v flannel pinterest. Leggings offal photo booth man bun fanny pack hexagon readymade lyft cardigan migas pop-up before they sold out. Activated charcoal venmo cray hexagon la croix organic gochujang artisan lomo. <br><br>
+
+          <blockquote>
+            Gentrify street art pork belly, shabby chic cliche beard stumptown pop-up viral.
+          </blockquote>
+        </div>
+        <div class="zammad-email-notification-footer">
+          <div class="text-center">
+            <a href="#{config.http_type}://#{config.fqdn}/#ticket/zoom/#{ticket.id}" target="zammad_app">#{t('View this in Zammad')}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
